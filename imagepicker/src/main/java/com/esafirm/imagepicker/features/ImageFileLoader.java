@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.provider.MediaStore;
 
 import com.esafirm.imagepicker.features.common.ImageLoaderListener;
+import com.esafirm.imagepicker.helper.ImagePickerUtils;
 import com.esafirm.imagepicker.model.Folder;
 import com.esafirm.imagepicker.model.Image;
 
@@ -86,6 +87,12 @@ public class ImageFileLoader {
                     File file = makeSafeFile(path);
                     if (file != null && file.exists()) {
                         Image image = new Image(id, name, path);
+
+                        if (ImagePickerUtils.isGifFormat(image)) {
+                            // exclude GIFs
+                            continue;
+                        }
+
                         temp.add(image);
 
                         if (folderMap != null) {
