@@ -112,6 +112,7 @@ public class ImageFileLoader {
             /* Convert HashMap to ArrayList if not null */
             List<Folder> folders = null;
             if (folderMap != null) {
+                folders = new ArrayList<>();
                 for (Folder folder : folderMap.values()) {
                     if (folder.getFolderName().equalsIgnoreCase("Camera")) {
                         // make sure to add Camera folder in front of the list
