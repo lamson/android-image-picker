@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
         classpath 'me.tatarka:gradle-retrolambda:3.6.1'
@@ -20,7 +21,7 @@ ext {
 allprojects {
     repositories {
         jcenter()
-        maven { url 'https://maven.google.com' }
+        google()
     }
 }
 
